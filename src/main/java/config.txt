@@ -1,0 +1,462 @@
+//复制到spring-service.xml文件 Dwr Base配置区
+<dwr:convert type="hibernate3" class="com.pinhuba.core.pojo.HmHouseInfo"/>
+<dwr:convert type="hibernate3" class="com.pinhuba.core.pojo.HmProject"/>
+<dwr:convert type="hibernate3" class="com.pinhuba.core.pojo.HmProjectBuilding"/>
+<dwr:convert type="hibernate3" class="com.pinhuba.core.pojo.HmProjectGroup"/>
+<dwr:convert type="hibernate3" class="com.pinhuba.core.pojo.HmProjectHousestyle"/>
+<dwr:convert type="hibernate3" class="com.pinhuba.core.pojo.HmProjectRegion"/>
+<dwr:convert type="hibernate3" class="com.pinhuba.core.pojo.HmProjectStandard"/>
+
+
+//复制到spring-service.xml文件 Dao配置区
+<bean id="hmHouseInfoDaoImpl" class="com.pinhuba.core.daoimpl.HmHouseInfoDaoImpl"></bean>
+<bean id="hmProjectDaoImpl" class="com.pinhuba.core.daoimpl.HmProjectDaoImpl"></bean>
+<bean id="hmProjectBuildingDaoImpl" class="com.pinhuba.core.daoimpl.HmProjectBuildingDaoImpl"></bean>
+<bean id="hmProjectGroupDaoImpl" class="com.pinhuba.core.daoimpl.HmProjectGroupDaoImpl"></bean>
+<bean id="hmProjectHousestyleDaoImpl" class="com.pinhuba.core.daoimpl.HmProjectHousestyleDaoImpl"></bean>
+<bean id="hmProjectRegionDaoImpl" class="com.pinhuba.core.daoimpl.HmProjectRegionDaoImpl"></bean>
+<bean id="hmProjectStandardDaoImpl" class="com.pinhuba.core.daoimpl.HmProjectStandardDaoImpl"></bean>
+
+
+//复制到hbm.oracle.xml文件
+<class name="com.pinhuba.core.pojo.HmHouseInfo" table="HM_HOUSE_INFO" >
+    <id name="primaryKey" type="java.lang.String">
+        <column name="HOUSE_ID" />
+    </id>
+    <property name="projectId" type="java.lang.String">
+        <column name="PROJECT_ID"/>
+    </property>
+    <property name="regionId" type="java.lang.String">
+        <column name="REGION_ID"/>
+    </property>
+    <property name="buildingId" type="java.lang.String">
+        <column name="BUILDING_ID"/>
+    </property>
+    <property name="houseType" type="java.lang.Integer">
+        <column name="HOUSE_TYPE"/>
+    </property>
+    <property name="houseCode" type="java.lang.String">
+        <column name="HOUSE_CODE"/>
+    </property>
+    <property name="houseName" type="java.lang.String">
+        <column name="HOUSE_NAME"/>
+    </property>
+    <property name="floor" type="java.lang.String">
+        <column name="FLOOR"/>
+    </property>
+    <property name="unit" type="java.lang.String">
+        <column name="UNIT"/>
+    </property>
+    <property name="houseSn" type="java.lang.String">
+        <column name="HOUSE_SN"/>
+    </property>
+    <property name="saleStatus" type="java.lang.Integer">
+        <column name="SALE_STATUS"/>
+    </property>
+    <property name="contractCode" type="java.lang.String">
+        <column name="CONTRACT_CODE"/>
+    </property>
+    <property name="houseDirection" type="java.lang.Integer">
+        <column name="HOUSE_DIRECTION"/>
+    </property>
+    <property name="houseStructure" type="java.lang.Integer">
+        <column name="HOUSE_STRUCTURE"/>
+    </property>
+    <property name="houseStyle" type="java.lang.Integer">
+        <column name="HOUSE_STYLE"/>
+    </property>
+    <property name="houseLift" type="java.lang.String">
+        <column name="HOUSE_LIFT"/>
+    </property>
+    <property name="buildingArea" type="java.lang.Integer">
+        <column name="BUILDING_AREA"/>
+    </property>
+    <property name="houseArea" type="java.lang.Integer">
+        <column name="HOUSE_AREA"/>
+    </property>
+    <property name="saleArea" type="java.lang.Integer">
+        <column name="SALE_AREA"/>
+    </property>
+    <property name="recordId" type="java.lang.String">
+        <column name="RECORD_ID"/>
+    </property>
+    <property name="recordDate" type="java.lang.String">
+        <column name="RECORD_DATE"/>
+    </property>
+    <property name="lastmodiId" type="java.lang.String">
+        <column name="LASTMODI_ID"/>
+    </property>
+    <property name="lastmodiDate" type="java.lang.String">
+        <column name="LASTMODI_DATE"/>
+    </property>
+    <property name="companyId" type="java.lang.Integer">
+        <column name="COMPANY_ID"/>
+    </property>
+</class>
+
+<class name="com.pinhuba.core.pojo.HmProject" table="HM_PROJECT" >
+    <id name="primaryKey" type="java.lang.String">
+        <column name="PROJECT_ID" />
+    </id>
+    <property name="code" type="java.lang.String">
+        <column name="CODE"/>
+    </property>
+    <property name="upcode" type="java.lang.String">
+        <column name="UPCODE"/>
+    </property>
+    <property name="projectName" type="java.lang.String">
+        <column name="PROJECT_NAME"/>
+    </property>
+    <property name="projectCode" type="java.lang.String">
+        <column name="PROJECT_CODE"/>
+    </property>
+    <property name="projectSimple" type="java.lang.String">
+        <column name="PROJECT_SIMPLE"/>
+    </property>
+    <property name="projectAddr" type="java.lang.String">
+        <column name="PROJECT_ADDR"/>
+    </property>
+    <property name="plotsName" type="java.lang.String">
+        <column name="PLOTS_NAME"/>
+    </property>
+    <property name="spreadName" type="java.lang.String">
+        <column name="SPREAD_NAME"/>
+    </property>
+    <property name="managerId" type="java.lang.String">
+        <column name="MANAGER_ID"/>
+    </property>
+    <property name="startDate" type="java.lang.String">
+        <column name="START_DATE"/>
+    </property>
+    <property name="endDate" type="java.lang.String">
+        <column name="END_DATE"/>
+    </property>
+    <property name="openDate" type="java.lang.String">
+        <column name="OPEN_DATE"/>
+    </property>
+    <property name="closeDate" type="java.lang.String">
+        <column name="CLOSE_DATE"/>
+    </property>
+    <property name="status" type="java.lang.Integer">
+        <column name="STATUS"/>
+    </property>
+    <property name="projectDesc" type="java.lang.String">
+        <column name="PROJECT_DESC"/>
+    </property>
+    <property name="projectArea" type="java.lang.Integer">
+        <column name="PROJECT_AREA"/>
+    </property>
+    <property name="buildArea" type="java.lang.Integer">
+        <column name="BUILD_AREA"/>
+    </property>
+    <property name="houseArea" type="java.lang.Integer">
+        <column name="HOUSE_AREA"/>
+    </property>
+    <property name="saleArea" type="java.lang.Integer">
+        <column name="SALE_AREA"/>
+    </property>
+    <property name="recordId" type="java.lang.String">
+        <column name="RECORD_ID"/>
+    </property>
+    <property name="recordDate" type="java.lang.String">
+        <column name="RECORD_DATE"/>
+    </property>
+    <property name="lastmodiId" type="java.lang.String">
+        <column name="LASTMODI_ID"/>
+    </property>
+    <property name="lastmodiDate" type="java.lang.String">
+        <column name="LASTMODI_DATE"/>
+    </property>
+    <property name="companyId" type="java.lang.Integer">
+        <column name="COMPANY_ID"/>
+    </property>
+    <property name="priority" type="java.lang.Integer">
+        <column name="PRIORITY"/>
+    </property>
+    <property name="landCertificateCode" type="java.lang.String">
+        <column name="LAND_CERTIFICATE_CODE"/>
+    </property>
+    <property name="landCertificateDate" type="java.lang.String">
+        <column name="LAND_CERTIFICATE_DATE"/>
+    </property>
+    <property name="projectplanPermitCode" type="java.lang.String">
+        <column name="PROJECTPLAN_PERMIT_CODE"/>
+    </property>
+    <property name="projectplanPermitDate" type="java.lang.String">
+        <column name="PROJECTPLAN_PERMIT_DATE"/>
+    </property>
+    <property name="landplanPermitCode" type="java.lang.String">
+        <column name="LANDPLAN_PERMIT_CODE"/>
+    </property>
+    <property name="landplanPermitDate" type="java.lang.String">
+        <column name="LANDPLAN_PERMIT_DATE"/>
+    </property>
+    <property name="constructionPermitCode" type="java.lang.String">
+        <column name="CONSTRUCTION_PERMIT_CODE"/>
+    </property>
+    <property name="constructionPermitDate" type="java.lang.String">
+        <column name="CONSTRUCTION_PERMIT_DATE"/>
+    </property>
+    <property name="persalePermitCode" type="java.lang.String">
+        <column name="PERSALE_PERMIT_CODE"/>
+    </property>
+    <property name="persalePermitDate" type="java.lang.String">
+        <column name="PERSALE_PERMIT_DATE"/>
+    </property>
+</class>
+
+<class name="com.pinhuba.core.pojo.HmProjectBuilding" table="HM_PROJECT_BUILDING" >
+    <id name="primaryKey" type="java.lang.String">
+        <column name="BUILDING_ID" />
+    </id>
+    <property name="projectId" type="java.lang.String">
+        <column name="PROJECT_ID"/>
+    </property>
+    <property name="regionId" type="java.lang.String">
+        <column name="REGION_ID"/>
+    </property>
+    <property name="buildingName" type="java.lang.String">
+        <column name="BUILDING_NAME"/>
+    </property>
+    <property name="buildingCode" type="java.lang.String">
+        <column name="BUILDING_CODE"/>
+    </property>
+    <property name="buildingType" type="java.lang.Integer">
+        <column name="BUILDING_TYPE"/>
+    </property>
+    <property name="buildingHeight" type="java.lang.Integer">
+        <column name="BUILDING_HEIGHT"/>
+    </property>
+    <property name="floorNumber" type="java.lang.Integer">
+        <column name="FLOOR_NUMBER"/>
+    </property>
+    <property name="floorHeight" type="java.lang.Integer">
+        <column name="FLOOR_HEIGHT"/>
+    </property>
+    <property name="houseNumber" type="java.lang.Integer">
+        <column name="HOUSE_NUMBER"/>
+    </property>
+    <property name="buildArea" type="java.lang.Integer">
+        <column name="BUILD_AREA"/>
+    </property>
+    <property name="houseArea" type="java.lang.Integer">
+        <column name="HOUSE_AREA"/>
+    </property>
+    <property name="greenArea" type="java.lang.Integer">
+        <column name="GREEN_AREA"/>
+    </property>
+    <property name="startDate" type="java.lang.String">
+        <column name="START_DATE"/>
+    </property>
+    <property name="endDate" type="java.lang.String">
+        <column name="END_DATE"/>
+    </property>
+    <property name="salePermitCode" type="java.lang.String">
+        <column name="SALE_PERMIT_CODE"/>
+    </property>
+    <property name="salePermitDate" type="java.lang.String">
+        <column name="SALE_PERMIT_DATE"/>
+    </property>
+    <property name="buildingImageId" type="java.lang.Integer">
+        <column name="BUILDING_IMAGE_ID"/>
+    </property>
+    <property name="planeImageId" type="java.lang.Integer">
+        <column name="PLANE_IMAGE_ID"/>
+    </property>
+    <property name="remark" type="java.lang.String">
+        <column name="REMARK"/>
+    </property>
+    <property name="recordId" type="java.lang.String">
+        <column name="RECORD_ID"/>
+    </property>
+    <property name="recordDate" type="java.lang.String">
+        <column name="RECORD_DATE"/>
+    </property>
+    <property name="lastmodiId" type="java.lang.String">
+        <column name="LASTMODI_ID"/>
+    </property>
+    <property name="lastmodiDate" type="java.lang.String">
+        <column name="LASTMODI_DATE"/>
+    </property>
+    <property name="companyId" type="java.lang.Integer">
+        <column name="COMPANY_ID"/>
+    </property>
+</class>
+
+<class name="com.pinhuba.core.pojo.HmProjectGroup" table="HM_PROJECT_GROUP" >
+    <id name="primaryKey" type="java.lang.String">
+        <column name="GROUP_ID" />
+    </id>
+    <property name="projectId" type="java.lang.String">
+        <column name="PROJECT_ID"/>
+    </property>
+    <property name="code" type="java.lang.String">
+        <column name="CODE"/>
+    </property>
+    <property name="upcode" type="java.lang.String">
+        <column name="UPCODE"/>
+    </property>
+    <property name="name" type="java.lang.String">
+        <column name="NAME"/>
+    </property>
+    <property name="priority" type="java.lang.Integer">
+        <column name="PRIORITY"/>
+    </property>
+    <property name="recordId" type="java.lang.String">
+        <column name="RECORD_ID"/>
+    </property>
+    <property name="recordDate" type="java.lang.String">
+        <column name="RECORD_DATE"/>
+    </property>
+    <property name="lastmodiId" type="java.lang.String">
+        <column name="LASTMODI_ID"/>
+    </property>
+    <property name="lastmodiDate" type="java.lang.String">
+        <column name="LASTMODI_DATE"/>
+    </property>
+    <property name="companyId" type="java.lang.Integer">
+        <column name="COMPANY_ID"/>
+    </property>
+</class>
+
+<class name="com.pinhuba.core.pojo.HmProjectHousestyle" table="HM_PROJECT_HOUSESTYLE" >
+    <id name="primaryKey" type="java.lang.String">
+        <column name="STYLE_ID" />
+    </id>
+    <property name="projectId" type="java.lang.String">
+        <column name="PROJECT_ID"/>
+    </property>
+    <property name="styleCode" type="java.lang.String">
+        <column name="STYLE_CODE"/>
+    </property>
+    <property name="styleImageId" type="java.lang.Integer">
+        <column name="STYLE_IMAGE_ID"/>
+    </property>
+    <property name="buildArea" type="java.lang.Integer">
+        <column name="BUILD_AREA"/>
+    </property>
+    <property name="houseArea" type="java.lang.Integer">
+        <column name="HOUSE_AREA"/>
+    </property>
+    <property name="houseType" type="java.lang.Integer">
+        <column name="HOUSE_TYPE"/>
+    </property>
+    <property name="houseStyle" type="java.lang.Integer">
+        <column name="HOUSE_STYLE"/>
+    </property>
+    <property name="recordId" type="java.lang.String">
+        <column name="RECORD_ID"/>
+    </property>
+    <property name="recordDate" type="java.lang.String">
+        <column name="RECORD_DATE"/>
+    </property>
+    <property name="lastmodiId" type="java.lang.String">
+        <column name="LASTMODI_ID"/>
+    </property>
+    <property name="lastmodiDate" type="java.lang.String">
+        <column name="LASTMODI_DATE"/>
+    </property>
+    <property name="companyId" type="java.lang.Integer">
+        <column name="COMPANY_ID"/>
+    </property>
+    <property name="remark" type="java.lang.String">
+        <column name="REMARK"/>
+    </property>
+</class>
+
+<class name="com.pinhuba.core.pojo.HmProjectRegion" table="HM_PROJECT_REGION" >
+    <id name="primaryKey" type="java.lang.String">
+        <column name="REGION_ID" />
+    </id>
+    <property name="projectId" type="java.lang.String">
+        <column name="PROJECT_ID"/>
+    </property>
+    <property name="regionName" type="java.lang.String">
+        <column name="REGION_NAME"/>
+    </property>
+    <property name="regionCode" type="java.lang.String">
+        <column name="REGION_CODE"/>
+    </property>
+    <property name="buildArea" type="java.lang.Integer">
+        <column name="BUILD_AREA"/>
+    </property>
+    <property name="houseArea" type="java.lang.Integer">
+        <column name="HOUSE_AREA"/>
+    </property>
+    <property name="greenArea" type="java.lang.Integer">
+        <column name="GREEN_AREA"/>
+    </property>
+    <property name="startDate" type="java.lang.String">
+        <column name="START_DATE"/>
+    </property>
+    <property name="endDate" type="java.lang.String">
+        <column name="END_DATE"/>
+    </property>
+    <property name="position" type="java.lang.String">
+        <column name="POSITION"/>
+    </property>
+    <property name="spreadName" type="java.lang.String">
+        <column name="SPREAD_NAME"/>
+    </property>
+    <property name="houseNumber" type="java.lang.Integer">
+        <column name="HOUSE_NUMBER"/>
+    </property>
+    <property name="requestPrice" type="java.lang.Integer">
+        <column name="REQUEST_PRICE"/>
+    </property>
+    <property name="isSale" type="java.lang.Integer">
+        <column name="IS_SALE"/>
+    </property>
+    <property name="remark" type="java.lang.String">
+        <column name="REMARK"/>
+    </property>
+    <property name="recordId" type="java.lang.String">
+        <column name="RECORD_ID"/>
+    </property>
+    <property name="recordDate" type="java.lang.String">
+        <column name="RECORD_DATE"/>
+    </property>
+    <property name="lastmodiId" type="java.lang.String">
+        <column name="LASTMODI_ID"/>
+    </property>
+    <property name="lastmodiDate" type="java.lang.String">
+        <column name="LASTMODI_DATE"/>
+    </property>
+    <property name="companyId" type="java.lang.Integer">
+        <column name="COMPANY_ID"/>
+    </property>
+</class>
+
+<class name="com.pinhuba.core.pojo.HmProjectStandard" table="HM_PROJECT_STANDARD" >
+    <id name="primaryKey" type="java.lang.String">
+        <column name="ID" />
+    </id>
+    <property name="standardName" type="java.lang.String">
+        <column name="STANDARD_NAME"/>
+    </property>
+    <property name="projectId" type="java.lang.String">
+        <column name="PROJECT_ID"/>
+    </property>
+    <property name="unitPrice" type="java.lang.Integer">
+        <column name="UNIT_PRICE"/>
+    </property>
+    <property name="remark" type="java.lang.String">
+        <column name="REMARK"/>
+    </property>
+    <property name="recordId" type="java.lang.String">
+        <column name="RECORD_ID"/>
+    </property>
+    <property name="recordDate" type="java.lang.String">
+        <column name="RECORD_DATE"/>
+    </property>
+    <property name="lastmodiId" type="java.lang.String">
+        <column name="LASTMODI_ID"/>
+    </property>
+    <property name="lastmodiDate" type="java.lang.String">
+        <column name="LASTMODI_DATE"/>
+    </property>
+    <property name="companyId" type="java.lang.Integer">
+        <column name="COMPANY_ID"/>
+    </property>
+</class>
+

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:dwr="http://www.directwebremoting.org/schema/spring-dwr"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+    http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.directwebremoting.org/schema/spring-dwr
+	http://www.directwebremoting.org/schema/spring-dwr-2.0.xsd">
+
+
+	<!--************************************************************************************-->
+    <!--************************************************************************************-->
+	<!--**********************                           ***********************************-->
+	<!--**********************         Dwr Base配置区开始   ***********************************-->
+	<!--**********************                           ***********************************-->
+	<!--************************************************************************************-->
+    <!--************************************************************************************-->
+
+	<dwr:configuration>  
+		<dwr:convert type="exception" class="java.lang.Exception"/>
+		<dwr:convert type="bean" class="java.lang.StackTraceElement"/>
+	
+		<dwr:convert type="bean" class="com.pinhuba.common.module.ResultBean"/>
+		<dwr:convert type="bean" class="com.pinhuba.common.pages.Pager"/>
+		<dwr:convert type="bean" class="com.pinhuba.common.module.UserMethodsInfo"/>
+		
+		<dwr:convert type="hibernate3" class="com.pinhuba.core.pojo.HrmPost"/>
+		<dwr:convert type="hibernate3" class="com.pinhuba.core.pojo.HrmEmployee"/>
+		<dwr:convert type="hibernate3" class="com.pinhuba.core.pojo.HrmDepartment"/>
+		
+		<dwr:convert type="hibernate3" class="com.pinhuba.core.pojo.SysAttachmentInfo"/>
+		<dwr:convert type="hibernate3" class="com.pinhuba.core.pojo.SysMethodInfo"/>
+		<dwr:convert type="hibernate3" class="com.pinhuba.core.pojo.SysMethodHelp"/>
+		<dwr:convert type="hibernate3" class="com.pinhuba.core.pojo.SysException"/>
+		<dwr:convert type="hibernate3" class="com.pinhuba.core.pojo.SysUserInfo"/>
+		<dwr:convert type="hibernate3" class="com.pinhuba.core.pojo.SysColumnControl"/>
+		<dwr:convert type="hibernate3" class="com.pinhuba.core.pojo.SysImageInfo"/>
+		<dwr:convert type="hibernate3" class="com.pinhuba.core.pojo.SysUserMethods"/>
+		<dwr:convert type="hibernate3" class="com.pinhuba.core.pojo.SysUserGroup"/>
+		<dwr:convert type="hibernate3" class="com.pinhuba.core.pojo.SysUserGroupDetail"/>
+		<dwr:convert type="hibernate3" class="com.pinhuba.core.pojo.SysRole"/>
+		<dwr:convert type="hibernate3" class="com.pinhuba.core.pojo.SysRoleDetail"/>
+		<dwr:convert type="hibernate3" class="com.pinhuba.core.pojo.SysRoleBind"/>
+		<dwr:convert type="hibernate3" class="com.pinhuba.core.pojo.SysLibraryInfo"/>
+		<dwr:convert type="hibernate3" class="com.pinhuba.core.pojo.SysParam"/>
+		<dwr:convert type="hibernate3" class="com.pinhuba.core.pojo.HmHouseInfo"/>
+<dwr:convert type="hibernate3" class="com.pinhuba.core.pojo.HmProject"/>
+<dwr:convert type="hibernate3" class="com.pinhuba.core.pojo.HmProjectBuilding"/>
+<dwr:convert type="hibernate3" class="com.pinhuba.core.pojo.HmProjectGroup"/>
+<dwr:convert type="hibernate3" class="com.pinhuba.core.pojo.HmProjectHousestyle"/>
+<dwr:convert type="hibernate3" class="com.pinhuba.core.pojo.HmProjectRegion"/>
+<dwr:convert type="hibernate3" class="com.pinhuba.core.pojo.HmProjectStandard"/>
+
+	</dwr:configuration>
+	
+	<!--************************************************************************************-->
+	<!--**********************         Dwr Base配置区结束              ***********************************-->
+	<!--************************************************************************************-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--************************************************************************************-->
+    <!--************************************************************************************-->
+	<!--**********************                           ***********************************-->
+	<!--**********************         Dwr Serivce配置区开始   ***********************************-->
+	<!--**********************                           ***********************************-->
+	<!--************************************************************************************-->
+    <!--************************************************************************************-->
+    
+	<bean id="dwrHrmEmployeeService" class="com.pinhuba.web.controller.dwr.DwrHrmEmployeeService">
+		 <dwr:remote javascript="dwrHrmEmployeeService"/>
+	</bean>
+	<bean id="dwrSysProcessService" class="com.pinhuba.web.controller.dwr.DwrSysProcessService">
+		<dwr:remote javascript="dwrSysProcessService"/>
+	</bean>
+	<bean id="dwrCommonService" class="com.pinhuba.web.controller.dwr.DwrCommonService">
+		<dwr:remote javascript="dwrCommonService"/>
+	</bean>
+	<!--************************************************************************************-->
+	<!--**********************         Dwr Serivce配置区结束    ***********************************-->
+	<!--************************************************************************************-->
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+    <!--************************************************************************************-->
+    <!--************************************************************************************-->
+	<!--**********************                           ***********************************-->
+	<!--**********************         Service配置区开始                ***********************************-->
+	<!--**********************                           ***********************************-->
+	<!--************************************************************************************-->
+    <!--************************************************************************************-->
+    
+	<bean id="userLoginService" class="com.pinhuba.core.service.UserLoginService"></bean>
+	<bean id="hrmEmployeeService" class="com.pinhuba.core.service.HrmEmployeeService"></bean>
+	<bean id="sysProcessService" class="com.pinhuba.core.service.SysProcessService"></bean>
+	<bean id="fileProcessService" class="com.pinhuba.core.service.FileProcessService"></bean>
+
+	<!--************************************************************************************-->
+	<!--**********************         Service配置区结束                ***********************************-->
+	<!--************************************************************************************-->	
+
+
+
+
+
+
+
+
+
+
+
+    <!--************************************************************************************-->
+    <!--************************************************************************************-->
+	<!--**********************                           ***********************************-->
+	<!--**********************         Dao配置区开始                              ***********************************-->
+	<!--**********************                           ***********************************-->
+	<!--************************************************************************************-->
+    <!--************************************************************************************-->
+    
+	<bean id="hrmDepartmentDaoImpl" class="com.pinhuba.core.daoimpl.HrmDepartmentDaoImpl"></bean>
+	<bean id="hrmPostDaoImpl" class="com.pinhuba.core.daoimpl.HrmPostDaoImpl"></bean>
+	<bean id="hrmEmployeeDaoImpl" class="com.pinhuba.core.daoimpl.HrmEmployeeDaoImpl"></bean>
+	<bean id="sysAttachmentInfoDaoImpl" class="com.pinhuba.core.daoimpl.SysAttachmentInfoDaoImpl"></bean>
+	<bean id="sysMethodInfoDaoImpl" class="com.pinhuba.core.daoimpl.SysMethodInfoDaoImpl"></bean>
+	<bean id="sysMethodHelpDaoImpl" class="com.pinhuba.core.daoimpl.SysMethodHelpDaoImpl"></bean>
+	<bean id="sysExceptionDaoImpl" class="com.pinhuba.core.daoimpl.SysExceptionDaoImpl"></bean>
+	<bean id="sysUserInfoDaoImpl" class="com.pinhuba.core.daoimpl.SysUserInfoDaoImpl"></bean>
+	<bean id="sysColumnControlDaoImpl" class="com.pinhuba.core.daoimpl.SysColumnControlDaoImpl"></bean>
+	<bean id="sysImageInfoDaoImpl" class="com.pinhuba.core.daoimpl.SysImageInfoDaoImpl"></bean>
+	<bean id="sysUserMethodsDaoImpl" class="com.pinhuba.core.daoimpl.SysUserMethodsDaoImpl"></bean>
+	<bean id="sysUserGroupDaoImpl" class="com.pinhuba.core.daoimpl.SysUserGroupDaoImpl"></bean>
+	<bean id="sysUserGroupDetailDaoImpl" class="com.pinhuba.core.daoimpl.SysUserGroupDetailDaoImpl"></bean>
+	<bean id="sysRoleDaoImpl" class="com.pinhuba.core.daoimpl.SysRoleDaoImpl"></bean>
+	<bean id="sysRoleDetailDaoImpl" class="com.pinhuba.core.daoimpl.SysRoleDetailDaoImpl"></bean>
+	<bean id="sysRoleBindDaoImpl" class="com.pinhuba.core.daoimpl.SysRoleBindDaoImpl"></bean>
+	<bean id="sysLibraryInfoDaoImpl" class="com.pinhuba.core.daoimpl.SysLibraryInfoDaoImpl"></bean>
+	<bean id="sysParamDaoImpl" class="com.pinhuba.core.daoimpl.SysParamDaoImpl"></bean>
+	
+	<!--************************************************************************************-->
+	<!--**********************        Dao配置区结束                                 ***********************************-->
+	<!--************************************************************************************-->
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- 拦截机制配置 -->
+	
+	<!-- 方法拦截 -->
+	<bean id="simpleAdvice" class="com.pinhuba.web.filter.springaop.SimpleAdvice"/>
+	
+	<!-- 异常捕捉 -->
+	<bean id="exceptionCatcherAdvice" class="com.pinhuba.web.filter.springaop.ExceptionCatcherAdvice">
+		<property name="sysExceptionDao" ref="sysExceptionDaoImpl"></property>
+	</bean>
+	
+	<!-- 拦截配置开始 使用BeanNameAutoProxyCreator -->
+	<!-- 
+	<bean id="simpleBeanProxy" class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+		<property name="beanNames">
+			<list>
+				<value>dwr*Service</value>
+			</list>
+		</property>
+		<property name="interceptorNames">
+			<list>
+				<value>simpleAdvice</value>
+				<value>exceptionCatcherAdvice</value>
+			</list>
+		</property>
+	</bean>
+	 -->
+	<!-- 拦截配置结束 -->
+
+</beans>

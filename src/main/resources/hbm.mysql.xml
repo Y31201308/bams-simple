@@ -1,0 +1,613 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<!-- references <typedef name="" class="" /> <import class="" rename=""/> -->
+
+<hibernate-mapping package="com.pinhuba.core.pojo"
+	default-lazy="true" default-cascade="save-update,merge,persist">
+
+	<class name="com.pinhuba.core.pojo.SysAttachmentInfo" table="sys_attachment_info">
+		<id name="primaryKey" type="long">
+			<column name="attachment_id" />
+			<generator class="identity" />
+		</id>
+		<property name="attachmentFilename" type="java.lang.String">
+			<column name="attachment_filename" />
+		</property>
+		<property name="attachmentName" type="java.lang.String">
+			<column name="attachment_name" />
+		</property>
+		<property name="attachmentRename" type="java.lang.String">
+			<column name="attachment_rename" />
+		</property>
+		<property name="attachmentDescription" type="java.lang.String">
+			<column name="attachment_description" />
+		</property>
+		<property name="attachmentRemark" type="java.lang.String">
+			<column name="attachment_remark" />
+		</property>
+		<property name="recordId" type="java.lang.String">
+			<column name="record_id" />
+		</property>
+		<property name="recordDate" type="java.lang.String">
+			<column name="record_date" />
+		</property>
+		<property name="lastmodiId" type="java.lang.String">
+			<column name="lastmodi_id" />
+		</property>
+		<property name="lastmodiDate" type="java.lang.String">
+			<column name="lastmodi_date" />
+		</property>
+	</class>
+
+	<class name="com.pinhuba.core.pojo.SysMethodInfo" table="sys_method_info">
+		<id name="primaryKey" type="java.lang.String">
+			<column name="method_info_id" />
+		</id>
+		<property name="methodInfoName" type="java.lang.String">
+			<column name="method_info_name" />
+		</property>
+		<property name="methodInfoEngname" type="java.lang.String">
+			<column name="method_info_engname" />
+		</property>
+		<property name="methodUri" type="java.lang.String">
+			<column name="method_uri" />
+		</property>
+		<property name="methodNo" type="java.lang.Integer">
+			<column name="method_no" />
+		</property>
+		<property name="imageSrc" type="java.lang.String">
+			<column name="image_src" />
+		</property>
+		<property name="methodLevel" type="java.lang.Integer">
+			<column name="method_level" />
+		</property>
+		<property name="levelUnit" type="java.lang.String">
+			<column name="level_unit" />
+		</property>
+		<property name="isAction" type="java.lang.Integer">
+			<column name="is_action" />
+		</property>
+		<property name="methodSign" type="java.lang.String">
+			<column name="method_sign" />
+		</property>
+		<property name="methodMsg" type="java.lang.String">
+			<column name="method_msg" />
+		</property>
+		<property name="methodPages" type="java.lang.String">
+			<column name="method_pages" />
+		</property>
+	</class>
+	
+	<class name="com.pinhuba.core.pojo.SysMethodHelp" table="sys_method_help" >
+	    <id name="primaryKey" type="long">
+	        <column name="help_id" />
+	        <generator class="identity" />
+	    </id>
+	    <property name="helpImg" type="java.lang.String">
+	        <column name="help_img"/>
+	    </property>
+	    <property name="helpDesc" type="java.lang.String">
+	        <column name="help_desc"/>
+	    </property>
+	    <property name="methodId" type="java.lang.String">
+	        <column name="method_id"/>
+	    </property>
+	</class>
+
+	<class name="com.pinhuba.core.pojo.SysException" table="sys_exception">
+		<id name="primaryKey" type="long">
+			<column name="exception_id" />
+			<generator class="identity" />
+		</id>
+		<property name="userId" type="java.lang.Integer">
+			<column name="user_id" />
+		</property>
+		<property name="exceptionDate" type="java.lang.String">
+			<column name="exception_date" />
+		</property>
+		<property name="exceptionMsg" type="java.lang.String">
+			<column name="exception_msg" />
+		</property>
+		<property name="exceptionClass" type="java.lang.String">
+			<column name="exception_class" />
+		</property>
+		<property name="exceptionContext" type="java.lang.String">
+			<column name="exception_context" />
+		</property>
+		<property name="processName" type="java.lang.String">
+			<column name="process_name" />
+		</property>
+		<property name="processDate" type="java.lang.String">
+			<column name="process_date" />
+		</property>
+		<property name="processContext" type="java.lang.String">
+			<column name="process_context" />
+		</property>
+		<property name="exceptionStatus" type="java.lang.Integer">
+			<column name="exception_status" />
+		</property>
+	</class>
+
+	<class name="com.pinhuba.core.pojo.SysUserInfo" table="sys_user_info">
+		<id name="primaryKey" type="long">
+			<column name="user_id" />
+			<generator class="identity" />
+		</id>
+		<property name="hrmEmployeeId" type="java.lang.String">
+			<column name="hrm_employee_id" />
+		</property>
+		<property name="userName" type="java.lang.String">
+			<column name="user_name" />
+		</property>
+		<property name="userpassword" type="java.lang.String">
+			<column name="userpassword" />
+		</property>
+		<property name="userAction" type="java.lang.Integer">
+			<column name="user_action" />
+		</property>
+		<property name="recordId" type="java.lang.String">
+			<column name="record_id" />
+		</property>
+		<property name="recordDate" type="java.lang.String">
+			<column name="record_date" />
+		</property>
+		<property name="lastmodiId" type="java.lang.String">
+			<column name="lastmodi_id" />
+		</property>
+		<property name="lastmodiDate" type="java.lang.String">
+			<column name="lastmodi_date" />
+		</property>
+		<property name="userType" type="java.lang.Integer">
+			<column name="user_type" />
+		</property>
+	</class>
+
+	<class name="com.pinhuba.core.pojo.SysColumnControl" table="sys_column_control">
+		<id name="primaryKey" type="long">
+			<column name="column_control_id" />
+			<generator class="identity" />
+		</id>
+		<property name="columnCode" type="java.lang.String">
+			<column name="column_code" />
+		</property>
+		<property name="columnName" type="java.lang.String">
+			<column name="column_name" />
+		</property>
+		<property name="isShow" type="java.lang.Integer">
+			<column name="is_show" />
+		</property>
+		<property name="tableName" type="java.lang.String">
+			<column name="table_name" />
+		</property>
+		<property name="isshowSimple" type="java.lang.Integer">
+			<column name="isshow_simple" />
+		</property>
+		<property name="isshowAdvanced" type="java.lang.Integer">
+			<column name="isshow_advanced" />
+		</property>
+		<property name="columnStrcount" type="java.lang.Integer">
+			<column name="column_strcount" />
+		</property>
+		<property name="priority" type="java.lang.Integer">
+			<column name="priority" />
+		</property>
+	</class>
+
+	<class name="com.pinhuba.core.pojo.SysImageInfo" table="sys_image_info">
+		<id name="primaryKey" type="long">
+			<column name="image_info_id" />
+			<generator class="identity" />
+		</id>
+		<property name="imageInfoFilename" type="java.lang.String">
+			<column name="image_info_filename" />
+		</property>
+		<property name="imageInfoFilePath" type="java.lang.String">
+			<column name="image_info_filepath" />
+		</property>
+		<property name="imageInfoName" type="java.lang.String">
+			<column name="image_info_name" />
+		</property>
+		<property name="imageInfoRename" type="java.lang.String">
+			<column name="image_info_rename" />
+		</property>
+		<property name="imageInfoDescription" type="java.lang.String">
+			<column name="image_info_description" />
+		</property>
+		<property name="imageInfoRemark" type="java.lang.String">
+			<column name="image_info_remark" />
+		</property>
+		<property name="recordId" type="java.lang.String">
+			<column name="record_id" />
+		</property>
+		<property name="recordDate" type="java.lang.String">
+			<column name="record_date" />
+		</property>
+		<property name="lastmodiId" type="java.lang.String">
+			<column name="lastmodi_id" />
+		</property>
+		<property name="lastmodiDate" type="java.lang.String">
+			<column name="lastmodi_date" />
+		</property>
+	</class>
+
+	<class name="com.pinhuba.core.pojo.HrmPost" table="hrm_post">
+		<id name="primaryKey" type="long">
+			<column name="post_id" />
+			<generator class="identity" />
+		</id>
+		<property name="hrmPostId" type="java.lang.String">
+			<column name="hrm_post_id" />
+		</property>
+		<property name="hrmPostName" type="java.lang.String">
+			<column name="hrm_post_name" />
+		</property>
+		<property name="hrmPostEngname" type="java.lang.String">
+			<column name="hrm_post_engname" />
+		</property>
+		<property name="hrmPostUpid" type="java.lang.String">
+			<column name="hrm_post_upid" />
+		</property>
+		<property name="hrmPostMang" type="java.lang.String">
+			<column name="hrm_post_mang" />
+		</property>
+		<property name="hrmPostDesc" type="java.lang.String">
+			<column name="hrm_post_desc" />
+		</property>
+		<property name="recordId" type="java.lang.String">
+			<column name="record_id" />
+		</property>
+		<property name="recordDate" type="java.lang.String">
+			<column name="record_date" />
+		</property>
+		<property name="lastmodiId" type="java.lang.String">
+			<column name="lastmodi_id" />
+		</property>
+		<property name="lastmodiDate" type="java.lang.String">
+			<column name="lastmodi_date" />
+		</property>
+		<property name="hrmPostShowRow" type="java.lang.Integer">
+			<column name="hrm_post_showrow" />
+		</property>
+	</class>
+
+	<class name="com.pinhuba.core.pojo.HrmEmployee" table="hrm_employee">
+		<id name="primaryKey" type="java.lang.String">
+			<column name="hrm_employee_id" />
+		</id>
+		<property name="hrmEmployeeName" type="java.lang.String">
+			<column name="hrm_employee_name" />
+		</property>
+		<property name="hrmEmployeeEngname" type="java.lang.String">
+			<column name="hrm_employee_engname" />
+		</property>
+		<property name="hrmEmployeeSimple" type="java.lang.String">
+			<column name="hrm_employee_simple" />
+		</property>
+		<property name="hrmEmployeeCode" type="java.lang.String">
+			<column name="hrm_employee_code" />
+		</property>
+		<property name="hrmEmployeePatternId" type="java.lang.String">
+			<column name="hrm_employee_pattern_id" />
+		</property>
+		<property name="hrmEmployeeBirthday" type="java.lang.String">
+			<column name="hrm_employee_birthday" />
+		</property>
+		<property name="hrmEmployeeSex" type="java.lang.String">
+			<column name="hrm_employee_sex" />
+		</property>
+		<property name="hrmEmployeeMarriage" type="java.lang.String">
+			<column name="hrm_employee_marriage" />
+		</property>
+		<property name="hrmEmployeePolitics" type="java.lang.String">
+			<column name="hrm_employee_politics" />
+		</property>
+		<property name="hrmEmployeeNationality" type="java.lang.String">
+			<column name="hrm_employee_nationality" />
+		</property>
+		<property name="hrmEmployeeBloodType" type="java.lang.String">
+			<column name="hrm_employee_blood_type" />
+		</property>
+		<property name="hrmEmployeeHeight" type="java.lang.String">
+			<column name="hrm_employee_height" />
+		</property>
+		<property name="hrmEmployeeWeight" type="java.lang.String">
+			<column name="hrm_employee_weight" />
+		</property>
+		<property name="hrmEmployeeImageInfoId" type="java.lang.Integer">
+			<column name="hrm_employee_image_info_id" />
+		</property>
+		<property name="hrmEmployeeSchool" type="java.lang.String">
+			<column name="hrm_employee_school" />
+		</property>
+		<property name="hrmEmployeeProfessional" type="java.lang.String">
+			<column name="hrm_employee_professional" />
+		</property>
+		<property name="hrmEmployeeDegree" type="java.lang.String">
+			<column name="hrm_employee_degree" />
+		</property>
+		<property name="hrmEmployeeIdentitycard" type="java.lang.String">
+			<column name="hrm_employee_identitycard" />
+		</property>
+		<property name="hrmEmployeeHometown" type="java.lang.String">
+			<column name="hrm_employee_hometown" />
+		</property>
+		<property name="hrmEmployeeHousePhone" type="java.lang.String">
+			<column name="hrm_employee_house_phone" />
+		</property>
+		<property name="hrmEmployeeHouseAddress" type="java.lang.String">
+			<column name="hrm_employee_house_address" />
+		</property>
+		<property name="hrmEmployeeMobileTele" type="java.lang.String">
+			<column name="hrm_employee_mobile_tele" />
+		</property>
+		<property name="hrmEmployeeWorkTele" type="java.lang.String">
+			<column name="hrm_employee_work_tele" />
+		</property>
+		<property name="hrmEmployeeInTime" type="java.lang.String">
+			<column name="hrm_employee_in_time" />
+		</property>
+		<property name="hrmEmployeeDepid" type="java.lang.Integer">
+			<column name="hrm_employee_depid" />
+		</property>
+		<property name="hrmEmployeePostId" type="java.lang.Integer">
+			<column name="hrm_employee_post_id" />
+		</property>
+		<property name="hrmEmployeeSquadId" type="java.lang.Integer">
+			<column name="hrm_employee_squad_id" />
+		</property>
+		<property name="hrmEmployeeEmail" type="java.lang.String">
+			<column name="hrm_employee_email" />
+		</property>
+		<property name="hrmEmployeeUrgentPreson" type="java.lang.String">
+			<column name="hrm_employee_urgent_preson" />
+		</property>
+		<property name="hrmEmployeeUrgentPhone" type="java.lang.String">
+			<column name="hrm_employee_urgent_phone" />
+		</property>
+		<property name="hrmEmployeeAdderss" type="java.lang.String">
+			<column name="hrm_employee_adderss" />
+		</property>
+		<property name="hrmEmployeeAppendid" type="java.lang.String">
+			<column name="hrm_employee_appendid" />
+		</property>
+		<property name="recordId" type="java.lang.String">
+			<column name="record_id" />
+		</property>
+		<property name="recordDate" type="java.lang.String">
+			<column name="record_date" />
+		</property>
+		<property name="lastmodiId" type="java.lang.String">
+			<column name="lastmodi_id" />
+		</property>
+		<property name="lastmodiDate" type="java.lang.String">
+			<column name="lastmodi_date" />
+		</property>
+		<property name="hrmEmployeeWorkTime" type="java.lang.String">
+			<column name="hrm_employee_work_time" />
+		</property>
+		<property name="hrmPartPost" type="java.lang.String">
+			<column name="hrm_part_post" />
+		</property>
+		<property name="hrmEmployeeStatus" type="java.lang.Integer">
+			<column name="hrm_employee_status" />
+		</property>
+		<property name="hrmOtherAttachmen" type="java.lang.String">
+			<column name="hrm_other_attachmen" />
+		</property>
+		<property name="hrmEmployeeActive" type="java.lang.Integer">
+			<column name="hrm_employee_active" />
+		</property>
+	</class>
+
+	<class name="com.pinhuba.core.pojo.SysUserMethods" table="sys_user_methods">
+		<id name="primaryKey" type="long">
+			<column name="user_method_id" />
+			<generator class="identity" />
+		</id>
+		<property name="userId" type="java.lang.Integer">
+			<column name="user_id" />
+		</property>
+		<property name="userMethodDetail" type="java.lang.String">
+			<column name="user_method_detail" />
+		</property>
+	</class>
+
+	<class name="com.pinhuba.core.pojo.SysUserGroup" table="sys_user_group">
+		<id name="primaryKey" type="long">
+			<column name="group_id" />
+			<generator class="identity" />
+		</id>
+		<property name="groupName" type="java.lang.String">
+			<column name="group_name" />
+		</property>
+		<property name="groupDecp" type="java.lang.String">
+			<column name="group_decp" />
+		</property>
+		<property name="recordId" type="java.lang.String">
+			<column name="record_id" />
+		</property>
+		<property name="recordDate" type="java.lang.String">
+			<column name="record_date" />
+		</property>
+		<property name="lastmodiId" type="java.lang.String">
+			<column name="lastmodi_id" />
+		</property>
+		<property name="lastmodeDate" type="java.lang.String">
+			<column name="lastmode_date" />
+		</property>
+	</class>
+
+	<class name="com.pinhuba.core.pojo.SysUserGroupDetail" table="sys_user_group_detail">
+		<id name="primaryKey" type="long">
+			<column name="group_detail_id" />
+			<generator class="identity" />
+		</id>
+		<property name="userId" type="java.lang.Integer">
+			<column name="user_id" />
+		</property>
+		<property name="groupId" type="java.lang.Integer">
+			<column name="group_id" />
+		</property>
+	</class>
+
+	<class name="com.pinhuba.core.pojo.SysRole" table="sys_role">
+		<id name="primaryKey" type="long">
+			<column name="role_id" />
+			<generator class="identity" />
+		</id>
+		<property name="roleName" type="java.lang.String">
+			<column name="role_name" />
+		</property>
+		<property name="roleDesc" type="java.lang.String">
+			<column name="role_desc" />
+		</property>
+		<property name="recordId" type="java.lang.String">
+			<column name="record_id" />
+		</property>
+		<property name="recordDate" type="java.lang.String">
+			<column name="record_date" />
+		</property>
+		<property name="lastmodiId" type="java.lang.String">
+			<column name="lastmodi_id" />
+		</property>
+		<property name="lastmodiDate" type="java.lang.String">
+			<column name="lastmodi_date" />
+		</property>
+	</class>
+
+	<class name="com.pinhuba.core.pojo.SysRoleDetail" table="sys_role_detail">
+		<id name="primaryKey" type="long">
+			<column name="role_detail_id" />
+			<generator class="identity" />
+		</id>
+		<property name="roleId" type="java.lang.Integer">
+			<column name="role_id" />
+		</property>
+		<property name="methodId" type="java.lang.String">
+			<column name="method_id" />
+		</property>
+	</class>
+
+	<class name="com.pinhuba.core.pojo.SysRoleBind" table="sys_role_bind">
+		<id name="primaryKey" type="long">
+			<column name="bind_id" />
+			<generator class="identity" />
+		</id>
+		<property name="bindType" type="java.lang.Integer">
+			<column name="bind_type" />
+		</property>
+		<property name="roleId" type="java.lang.Integer">
+			<column name="role_id" />
+		</property>
+		<property name="bindValue" type="java.lang.String">
+			<column name="bind_value" />
+		</property>
+	</class>
+
+	<class name="com.pinhuba.core.pojo.SysLibraryInfo" table="sys_library_info">
+		<id name="primaryKey" type="long">
+			<column name="library_id" />
+			<generator class="identity" />
+		</id>
+		<property name="libraryInfoCode" type="java.lang.String">
+			<column name="library_info_code" />
+		</property>
+		<property name="libraryInfoName" type="java.lang.String">
+			<column name="library_info_name" />
+		</property>
+		<property name="libraryInfoEngname" type="java.lang.String">
+			<column name="library_info_engname" />
+		</property>
+		<property name="libraryInfoUpcode" type="java.lang.String">
+			<column name="library_info_upcode" />
+		</property>
+		<property name="libraryInfoIsvalid" type="java.lang.Integer">
+			<column name="library_info_isvalid" />
+		</property>
+		<property name="libraryInfoDesc" type="java.lang.String">
+			<column name="library_info_desc" />
+		</property>
+	</class>
+
+	<class name="com.pinhuba.core.pojo.HrmDepartment" table="hrm_department">
+		<id name="primaryKey" type="long">
+			<column name="dep_id" />
+			<generator class="identity" />
+		</id>
+		<property name="hrmDepId" type="java.lang.String">
+			<column name="hrm_dep_id" />
+		</property>
+		<property name="hrmDepCode" type="java.lang.String">
+			<column name="hrm_dep_code" />
+		</property>
+		<property name="hrmDepName" type="java.lang.String">
+			<column name="hrm_dep_name" />
+		</property>
+		<property name="hrmDepEngname" type="java.lang.String">
+			<column name="hrm_dep_engname" />
+		</property>
+		<property name="hrmDepUpid" type="java.lang.String">
+			<column name="hrm_dep_upid" />
+		</property>
+		<property name="hrmEmpId" type="java.lang.String">
+			<column name="hrm_emp_id" />
+		</property>
+		<property name="hrmDepDesc" type="java.lang.String">
+			<column name="hrm_dep_desc" />
+		</property>
+		<property name="recordId" type="java.lang.String">
+			<column name="record_id" />
+		</property>
+		<property name="recordDate" type="java.lang.String">
+			<column name="record_date" />
+		</property>
+		<property name="lastmodiId" type="java.lang.String">
+			<column name="lastmodi_id" />
+		</property>
+		<property name="lastmodiDate" type="java.lang.String">
+			<column name="lastmodi_date" />
+		</property>
+		<property name="hrmDepShowRow" type="java.lang.Integer">
+			<column name="hrm_dep_showrow" />
+		</property>
+	</class>
+	
+	<class name="com.pinhuba.core.pojo.SysParam" table="sys_param">
+		<id name="primaryKey" type="long">
+			<column name="param_id" />
+			<generator class="identity" />
+		</id>
+		<property name="paramIndex" type="java.lang.String">
+			<column name="param_index" />
+		</property>
+		<property name="paramTitle" type="java.lang.String">
+			<column name="param_title" />
+		</property>
+		<property name="paramValue" type="java.lang.String">
+			<column name="param_value" />
+		</property>
+		<property name="paramRemark" type="java.lang.String">
+			<column name="param_remark" />
+		</property>
+		<property name="recordId" type="java.lang.String">
+			<column name="record_id" />
+		</property>
+		<property name="recordDate" type="java.lang.String">
+			<column name="record_date" />
+		</property>
+		<property name="lastmodiId" type="java.lang.String">
+			<column name="lastmodi_id" />
+		</property>
+		<property name="lastmodiDate" type="java.lang.String">
+			<column name="lastmodi_date" />
+		</property>
+		<property name="paramType" type="java.lang.Integer">
+			<column name="param_type" />
+		</property>
+		<property name="paramTypeValue" type="java.lang.String">
+			<column name="param_type_value" />
+		</property>
+	</class>
+</hibernate-mapping>
